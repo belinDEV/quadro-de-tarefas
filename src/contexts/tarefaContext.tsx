@@ -77,6 +77,11 @@ export function TarefasProvider({ children }: PropsTarefaProvider) {
 
 
     }
+    async function deleteTarefa(id?: Key) {
+        await axios.delete(`/api/tarefas/${id}`);
+        const resposta = await axios.get("/api/tarefas");
+        setTarefas(resposta.data.tarefas);
+    }
 
     function funSetTarefaDefault() {
         setEditarTarefas({editar: false, tarefa: null})

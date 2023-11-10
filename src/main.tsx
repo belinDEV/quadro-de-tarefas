@@ -22,6 +22,11 @@ createServer({
 
             return schema.db.tarefas.update(data.id, data)
         })
+        this.delete("/api/tarefas/:id", async (schema, req) => {
+            const { id } = req.params;
+            const tarefa = await schema.find("tarefas", id);
+            return tarefa?.destroy();
+        });
     }
 })
 

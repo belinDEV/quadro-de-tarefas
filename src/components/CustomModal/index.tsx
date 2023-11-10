@@ -96,6 +96,14 @@ export function CustomModal(props: PropsModal) {
                     value={descricao}
                     onChange={(event) => setDescricao(event.target.value)}
                 />
+             <select
+                    value={quadro}
+                    onChange={(event) => setQuadro(event.target.value)}
+                >
+                    <option value="Quadro 1">Quadro 1</option>
+                    <option value="Quadro 2">Quadro 2</option>
+                    <option value="Quadro 3">Quadro 3</option>
+                </select>
 
                 <button type='submit'>
                     Cadastrar
